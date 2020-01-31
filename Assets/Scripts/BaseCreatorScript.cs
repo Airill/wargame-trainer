@@ -9,6 +9,7 @@ public class BaseCreatorScript : MonoBehaviour
     BaseChoice bsScript;
 
     GameObject NameInput;
+    NameInputScript niScript;
 
     string MiniatureName;
     
@@ -17,14 +18,15 @@ public class BaseCreatorScript : MonoBehaviour
         BaseLibrary = GameObject.Find("BaseLibrary");
         bsScript =  BaseLibrary.GetComponent<BaseChoice>();
         NameInput = GameObject.Find("Name");
+        niScript = NameInput.GetComponent<NameInputScript>();
     }
 
     public void CreateMini() {
         BaseModel = bsScript.GetChosenBase();
         GameObject Miniature =  Instantiate(BaseModel, new Vector3(0, 0, 0), Quaternion.identity);
-        Miniature.GetComponent<BaseClass>().SetName("rbhbkkk");
-      //  var BaseScript = BaseModel.GetComponent<BaseClass>();
-        //BaseScript.SetPlayer(1);
-        //BaseScript.SetName;
+
+
+        Miniature.GetComponent<BaseClass>().SetName(niScript.GetChosenName());
+
     }
 }

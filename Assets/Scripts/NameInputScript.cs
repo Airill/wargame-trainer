@@ -1,20 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NameInputScript : MonoBehaviour
 {
-    public string ChosenName;
+    string ChosenName;
     public GameObject input;
-    // Start is called before the first frame update
+
     void Start()
     {
-       // input = GameObject.Find("ObjectName");
-        //.GetComponent<InputField>();
+
     }
 
     public void NameChanged() {
-      //  ChosenName = input.text;
+        ChosenName = input.GetComponent<InputField>().text;
+    }
+
+    public string GetChosenName() {
+        return ChosenName;
     }
 
 }
