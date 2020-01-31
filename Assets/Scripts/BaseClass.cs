@@ -5,18 +5,22 @@ using UnityEngine;
 public class BaseClass : MonoBehaviour
 {
     string Name;
-    string Color;
-    GameObject Model;
+    int Player;
+    // GameObject Model;
+
+    void Start() {
+        GetComponentInChildren<TextMesh>().text = Name; 
+    }
 
     public void SetName (string name) {
         Name = name;
     }
 
-    public void SetColor (string color) {
-        Color = color;
+    public void SetPlayer (int player) {
+        Player = player;
     }
 
-    public void SetModel (GameObject model) {
+   /* public void SetModel (GameObject model) {
         Model = model;
-    }
+    } */
 }
