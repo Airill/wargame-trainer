@@ -6,15 +6,19 @@ public class BaseCreatorScript : MonoBehaviour
 {
     GameObject BaseModel;
     GameObject BaseLibrary;
-    BaseChoice bsScript;
-
+    GameObject PlayerLibrary;
     GameObject NameInput;
+
+    BaseChoice bsScript;    
     NameInputScript niScript;
+    PlayerChoice pcScript;
 
     string MiniatureName;
     
     void Start()
     {
+        PlayerLibrary = GameObject.Find("PlayerLibrary");
+        pcScript = PlayerLibrary.GetComponent<PlayerChoice>();
         BaseLibrary = GameObject.Find("BaseLibrary");
         bsScript =  BaseLibrary.GetComponent<BaseChoice>();
         NameInput = GameObject.Find("Name");
@@ -24,9 +28,8 @@ public class BaseCreatorScript : MonoBehaviour
     public void CreateMini() {
         BaseModel = bsScript.GetChosenBase();
         GameObject Miniature =  Instantiate(BaseModel, new Vector3(0, 0, 0), Quaternion.identity);
-
-
         Miniature.GetComponent<BaseClass>().SetName(niScript.GetChosenName());
+        Miniature.GetComponent<BaseClass>().SetMaterial(pcScript.GetMaterial());
 
     }
 }

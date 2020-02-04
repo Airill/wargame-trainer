@@ -3103,7 +3103,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropdown: {fileID: 1099806428}
-  ChosenPlayer: 0
+  Materials:
+  - {fileID: 2100000, guid: d34ba3c8cb6b65642899b447591161c7, type: 2}
+  - {fileID: 2100000, guid: a3f9efc8941dfdb4db2fb225f33fffe9, type: 2}
 --- !u!1 &1867776222
 GameObject:
   m_ObjectHideFlags: 0

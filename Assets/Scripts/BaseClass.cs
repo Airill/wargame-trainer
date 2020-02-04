@@ -6,10 +6,12 @@ public class BaseClass : MonoBehaviour
 {
     string Name;
     int Player;
+    Material Material;
     // GameObject Model;
 
     void Start() {
-        GetComponentInChildren<TextMesh>().text = Name; 
+        GetComponentInChildren<TextMesh>().text = Name; // get name at start
+        GetComponent<MeshRenderer>().material = Material;
     }
 
     public void SetName (string name) {
@@ -20,6 +22,9 @@ public class BaseClass : MonoBehaviour
         Player = player;
     }
 
+    public void SetMaterial (Material material) {
+        Material = material;
+    }
    /* public void SetModel (GameObject model) {
         Model = model;
     } */
