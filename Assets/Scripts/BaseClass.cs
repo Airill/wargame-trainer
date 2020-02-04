@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BaseClass : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class BaseClass : MonoBehaviour
     // GameObject Model;
 
     void Start() {
-        GetComponentInChildren<TextMesh>().text = Name; // get name at start
+        GetComponentInChildren<Text>().text = Name; // get name at start
         GetComponent<MeshRenderer>().material = Material;
     }
 
