@@ -1,20 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LineRendererEx : MonoBehaviour
 {
     public Material material;
-    public float LineWidth = 0.2f;
+    public float LineWidth = 0.1f;
+    public Slider slider;
+    BaseClass BC;
+    
 
     [Range(0.1f, 100f)]
-    public float radius = 1.0f;
+    public float Radius = 1.0f;
 
     [Range(3, 256)]
     public int numSegments = 128;
 
     void Start() {
+        BC = transform.parent.GetComponent<BaseClass>(); 
         DoRenderer();
+    }
+
+    public void ChangeRadius() {
+        Radius = slider.value;
+        BC.SetAuraRadius(Radius);
+    }
+    public void ChangeSliderStatus() {
+        slider.gameObject.SetActive(!slider.gameObject.activeSelf);
     }
 
     public void DoRenderer() {
@@ -32,8 +45,8 @@ public class LineRendererEx : MonoBehaviour
         float theta = 0f;
 
         for (int i = 0; i < numSegments + 1; i++) {
-            float x = radius * Mathf.Cos(theta);
-            float z = radius * Mathf.Sin(theta);
+            float x = Radius * Mathf.Cos(theta);
+            float z = Radius * Mathf.Sin(theta);
             Vector3 pos = new Vector3(x, 0, z);
             lineRenderer.SetPosition(i, pos);
             theta += deltaTheta;
