@@ -19,7 +19,7 @@ public class BaseClass : MonoBehaviour
 
         AuraText.GetComponent<Text>().text = AuraRadius.ToString();
 
-        GetComponent<MeshRenderer>().material = Material;
+        GetComponentInChildren<MeshRenderer>().material = Material;
     }
 
     public void SetAuraRadius(float radius) {

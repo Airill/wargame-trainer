@@ -28,7 +28,7 @@ public class BaseCreatorScript : MonoBehaviour
     public void CreateMini() {
         BaseModel = bsScript.GetChosenBase();
         GameObject Miniature =  Instantiate(BaseModel, new Vector3(0, 0, 0), Quaternion.identity);
-        Miniature.GetComponent<BaseClass>().SetName(niScript.GetChosenName());
+        Miniature.GetComponent<BaseClass>().SetName(niScript.GetChosenName()); 
         Miniature.GetComponent<BaseClass>().SetMaterial(pcScript.GetMaterial());
 
     }

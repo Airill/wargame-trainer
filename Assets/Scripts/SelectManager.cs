@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class SelectManager : MonoBehaviour
 {
+    GameObject LastObject;
+    private void Start() {
+        
+    }
+
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
             RaycastHit hit;
@@ -17,3 +22,4 @@ public class SelectManager : MonoBehaviour
         }
     }
 }
+ 
